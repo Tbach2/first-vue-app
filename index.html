@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Freezer Inventory</title>
+
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <link rel="stylesheet" href="//unpkg.com/bootstrap@4.x/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//unpkg.com/bootstrap-vue@2.x/dist/bootstrap-vue.min.css"/>
+
+    <!-- Overrides and custom styles -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div id="app">
+    <b-navbar variant="secondary" type="dark">
+        <b-navbar-brand class="mb-0"><h1>Freezer Inventory</h1></b-navbar-brand>
+    </b-navbar>
+    <b-container>
+        <b-row>
+            <b-col cols="12" md="6" xl="4">
+                <h3>Add Freezer Item: </h3>
+                <add-freezer-item-form :freezer-item="freezerItem" @add-freezer-item="addFreezerItem">
+                </add-freezer-item-form>
+            </b-col>
+            <b-col>
+                <h3>Freezer Items: </h3>
+                <item-list
+                        :freezer-items="freezerItemList"
+                        @remove-freezer-item="removeFreezerItem"
+                >
+                </item-list>
+            </b-col>
+        </b-row>
+    </b-container>
+</div>
+
+<!-- Load Vue followed by BootstrapVue -->
+<script src="//unpkg.com/vue@2.x/dist/vue.js"></script>
+<script src="//unpkg.com/bootstrap-vue@2.x/dist/bootstrap-vue.js"></script>
+
+<!-- Load the following for BootstrapVueIcons support -->
+<script src="//unpkg.com/bootstrap-vue@2.x/dist/bootstrap-vue-icons.min.js"></script>
+
+<!-- Load the app -->
+<script src="js/components/form.js"></script>
+<script src="js/components/itemList.js"></script>
+<script src="js/components/listItem.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
